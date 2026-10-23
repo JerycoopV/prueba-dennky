@@ -117,7 +117,7 @@ prueba-dennky/
 ### 2. Reglas de Validación
 - **Campos obligatorios:** Si se presiona el botón o la tecla *Enter* con campos vacíos, se activan mensajes explicativos en rojo bajo cada campo correspondiente.
 - **Formato de correo electrónico:** Valida la estructura mediante expresión regular RFC compliant (`nombre@dominio.extensión`). Si el formato no coincide, se informa al usuario de inmediato.
-- **Longitud y seguridad de contraseña:** Se exige un mínimo de 8 caracteres. Además, se previene el uso de secuencias triviales (`123`, `12345678`) y se valida que la contraseña no sea igual ni contenga el nombre de la cuenta.
+- **Longitud y seguridad de contraseña:** Se exige un mínimo de 8 caracteres (*"La contraseña debe tener al menos 8 caracteres."*) y la presencia de al menos un símbolo especial como `_`, `@`, `#`, `!` (*"La contraseña debe incluir al menos un símbolo (ej. _, @, #, !)."*). La alerta se evalúa en tiempo real y permanece activa de forma continua, evitando que se puedan ingresar contraseñas cortas al crear usuarios sucesivos.
 - **Confirmación de contraseña:** Verifica que el valor coincida exactamente con la contraseña principal en tiempo real.
 - **Validación de correos en sesión:** Si el usuario intenta registrar un correo que ya fue creado previamente en la sesión, se muestra una alerta específica indicando que el correo ya existe.
 - **Validación en tiempo real y blur:** Si el usuario interactúa o sale de un campo (`@blur`), el error se evalúa inmediatamente y permanece activo mientras el valor no cumpla los requisitos, eliminándose en cuanto se introduce un valor válido.

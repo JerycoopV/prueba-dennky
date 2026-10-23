@@ -2,6 +2,7 @@ import { reactive } from 'vue';
 import type { RegisterFormData, LoginFormData, FormErrors } from '../types/auth';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+const SYMBOL_REGEX = /[_@#$%^&*()+\-=[\]{};':"\\|,.<>/?~!]/;
 
 export function useAuthValidation() {
   const registerErrors = reactive<FormErrors<RegisterFormData>>({});
@@ -33,24 +34,15 @@ export function useAuthValidation() {
     return '';
   };
 
-  const validatePassword = (password: string, userName?: string): string => {
+  const validatePassword = (password: string): string => {
     if (!password) {
       return 'La contraseña es obligatoria.';
     }
     if (password.length < 8) {
       return 'La contraseña debe tener al menos 8 caracteres.';
     }
-    const lowerPass = password.toLowerCase();
-    // Insecure trivial sequences (123, 12345678, password, etc.)
-    if (/^(123|1234|12345|123456|1234567|12345678|123456789|password|admin|qwerty)$/i.test(lowerPass)) {
-      return 'La contraseña no puede ser una secuencia predecible como 123 ni una palabra común.';
-    }
-    // Cannot be or contain user's name
-    if (userName && userName.trim().length >= 3) {
-      const cleanName = userName.trim().toLowerCase();
-      if (lowerPass === cleanName || lowerPass.includes(cleanName)) {
-        return 'La contraseña no puede contener el nombre de la cuenta.';
-      }
+    if (!SYMBOL_REGEX.test(password)) {
+      return 'La contraseña debe incluir al menos un símbolo (ej. _, @, #, !).';
     }
     return '';
   };
@@ -76,7 +68,7 @@ export function useAuthValidation() {
     } else if (field === 'email') {
       err = validateEmail(data.email, existingEmails);
     } else if (field === 'password') {
-      err = validatePassword(data.password, data.name);
+      err = validatePassword(data.password);
     } else if (field === 'confirmPassword') {
       err = validateConfirmPassword(data.confirmPassword, data.password);
     }
@@ -103,7 +95,7 @@ export function useAuthValidation() {
   const validateRegisterForm = (data: RegisterFormData, existingEmails: string[] = []): boolean => {
     const nameErr = validateName(data.name);
     const emailErr = validateEmail(data.email, existingEmails);
-    const passErr = validatePassword(data.password, data.name);
+    const passErr = validatePassword(data.password);
     const confirmErr = validateConfirmPassword(data.confirmPassword, data.password);
 
     if (nameErr) registerErrors.name = nameErr; else delete registerErrors.name;
@@ -128,7 +120,7 @@ export function useAuthValidation() {
 
   const validateLoginForm = (data: LoginFormData): boolean => {
     const emailErr = validateEmail(data.email);
-    const passErr = validatePassword(data.password);
+    const passErr = !data.password ? 'La contraseña es obligatoria.' : (data.password.length < 8 ? 'La contraseña debe tener al menos 8 caracteres.' : '');
 
     if (emailErr) loginErrors.email = emailErr; else delete loginErrors.email;
     if (passErr) loginErrors.password = passErr; else delete loginErrors.password;
@@ -144,7 +136,7 @@ export function useAuthValidation() {
         if (!err) delete loginErrors.email;
         else loginErrors.email = err;
       } else if (field === 'password') {
-        const err = validatePassword(data.password);
+        const err = !data.password ? 'La contraseña es obligatoria.' : (data.password.length < 8 ? 'La contraseña debe tener al menos 8 caracteres.' : '');
         if (!err) delete loginErrors.password;
         else loginErrors.password = err;
       }

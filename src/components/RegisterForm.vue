@@ -47,10 +47,8 @@ const handleFieldBlur = (field: keyof RegisterFormData) => {
 };
 
 const handleFieldInput = (field: keyof RegisterFormData) => {
-  // If the field has been touched or already has error or has content, validate in real time
-  if (touched[field] || registerErrors[field] || form[field].length > 0) {
-    validateRegisterField(field, form, props.existingEmails);
-  }
+  touched[field] = true;
+  validateRegisterField(field, form, props.existingEmails);
 };
 
 const resetForm = () => {
