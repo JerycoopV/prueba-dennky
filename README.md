@@ -154,9 +154,6 @@ prueba-dennky/
    - *Problema:* Lograr los tonos exactos y las proporciones del shot de Dribbble sin contar con un archivo Figma abierto.
    - *Solución:* Se realizó un análisis pixel a pixel de la imagen original (`reference.png`), extrayendo las coordenadas de color exactas del botón primario (`#6d56e6`), el fondo de la tarjeta (`#ffffff`), el fondo del lienzo (`#eaebed`) y el botón social de Google (`#f4f6f8`), aplicando la tipografía *Plus Jakarta Sans* que coincide con el sistema de diseño Nucleus UI.
 
-> 📝 **[Espacio reservado para reflexiones del postulante]:**
-> *(Puedes complementar aquí cualquier aspecto particular de tu propia experiencia de desarrollo durante la realización del reto antes de entregar el enlace final).*
-
 ---
 
 ## 💡 Aprendizajes Obtenidos
@@ -164,9 +161,6 @@ prueba-dennky/
 - Profundización en la arquitectura por componentes y composables de **Vue 3 con Composition API** y tipado estricto con **TypeScript**.
 - Implementación de patrones de validación reactiva en tiempo real (*real-time error clearance*) sin degradar la experiencia de usuario ni generar alertas prematuras antes de la interacción.
 - Manejo avanzado de accesibilidad web (WCAG): etiquetado semántico, atributos `aria-*`, gestión del foco y soporte completo para teclado.
-
-> 📝 **[Espacio reservado para aprendizajes adicionales del postulante]:**
-> *(Puedes añadir aquí impresiones personales o lecciones aprendidas durante tu revisión).*
 
 ---
 
@@ -182,5 +176,5 @@ prueba-dennky/
 ## 📬 Contacto y Entrega
 
 - **Repositorio:** [https://github.com/JerycoopV/prueba-dennky](https://github.com/JerycoopV/prueba-dennky)
-- **Candidato:** Joshua / JerycoopV
+- **Candidato:** Jerycoop Vidal Solano/ JerycoopV
 - **Evaluador:** Equipo de Front-End — Dennky
