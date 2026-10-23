@@ -1,0 +1,67 @@
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --bg-page: #eaebed;
+  --bg-card: #ffffff;
+  --primary: #6d56e6;
+  --primary-hover: #5c45d3;
+  --primary-active: #503bbd;
+  --primary-light: rgba(109, 86, 230, 0.12);
+  --text-primary: #101828;
+  --text-secondary: #667085;
+  --text-muted: #98a2b3;
+  --border-default: #d0d5dd;
+  --border-subtle: #eaecf0;
+  --danger: #f04438;
+  --danger-light: rgba(240, 68, 56, 0.12);
+  --success: #10b981;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* Remove default focus outline on mouse click, retain for keyboard navigation */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar for desktop */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8cbd2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8abb5;
+}
