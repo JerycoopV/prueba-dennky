@@ -4,6 +4,28 @@ Solución desarrollada para el reto técnico Front-End de **Dennky**, consistent
 
 ---
 
+## 🌐 Vista Previa del Proyecto (Live Demo)
+
+> ✨ **Aplicación desplegada y lista para interactuar en GitHub Pages:**  
+> 🔗 **[https://jerycoopv.github.io/prueba-dennky/](https://jerycoopv.github.io/prueba-dennky/)**
+
+[![Demo en Vivo](https://img.shields.io/badge/Demo%20en%20Vivo-GitHub%20Pages-6d56e6?style=for-the-badge&logo=github&logoColor=white)](https://jerycoopv.github.io/prueba-dennky/)
+[![Vue 3](https://img.shields.io/badge/Vue%203-3.5%2B-42b883?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9%2B-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8%2B-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+### 🚀 Funcionalidades para probar en la Demo:
+- **Validación reactiva en tiempo real y blur (`@blur`)**: mensajes de error inmediatos y persistentes ante campos vacíos, correos inválidos y contraseñas débiles.
+- **Seguridad en contraseña**: validación estricta de mínimo 8 caracteres y al menos un símbolo especial (`_`, `@`, `#`, `!`, etc.).
+- **Detección de duplicados**: control en memoria que detecta si un correo ya fue registrado en la sesión actual.
+- **Alternancia dinámica de vistas**: cambio instantáneo entre **Crear cuenta** (*Register*) e **Iniciar sesión** (*Login*).
+- **Control de visibilidad de credenciales**: toggle interactivo para mostrar u ocultar contraseñas.
+- **Accesibilidad y navegación por teclado**: envío con tecla *Enter* y foco automático en el primer campo con error.
+- **Feedback modal y reinicio ético**: confirmación de envío exitoso con opción de registrar un nuevo usuario limpiando el estado.
+- **Diseño 100% responsivo**: optimizado para resoluciones Desktop (>960px), Tablet (768px-960px) y Móvil (<768px).
+
+---
+
 ## 🎨 Diseño de Referencia
 
 - **Diseño en Dribbble:** [Login / Register Page — Nucleus UI](https://dribbble.com/shots/25536172-Login-Register-Page-Nucleus-UI)
@@ -175,6 +197,7 @@ prueba-dennky/
 
 ## 📬 Contacto y Entrega
 
+- **🌐 Despliegue en Vivo (Demo):** [https://jerycoopv.github.io/prueba-dennky/](https://jerycoopv.github.io/prueba-dennky/)
 - **Repositorio:** [https://github.com/JerycoopV/prueba-dennky](https://github.com/JerycoopV/prueba-dennky)
-- **Candidato:** Jerycoop Vidal Solano/ JerycoopV
+- **Candidato:** Jerycoop Vidal Solano / JerycoopV
 - **Evaluador:** Equipo de Front-End — Dennky
